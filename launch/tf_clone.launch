@@ -1,0 +1,19 @@
+<launch>
+  <arg name="input_parent_frame" default="map"/>
+  <arg name="input_child_frame" default="base_link"/>
+
+  <arg name="output_parent_frame" default="map"/>
+  <arg name="output_child_frame" default="base_link2"/>
+
+  <arg name="frequency" default="15.0"/>
+
+  <node name="tf_cloner" pkg="tf_clone" type="tf_clone_node" output="screen">
+    <param name="input_parent_frame" type="string" value="$(arg input_parent_frame)" />
+    <param name="input_child_frame" type="string" value="$(arg input_child_frame)" />
+
+    <param name="output_parent_frame" type="string" value="$(arg output_parent_frame)" />
+    <param name="output_child_frame" type="string" value="$(arg output_child_frame)" />
+
+    <param name="frequency" type="double" value="15.0" />
+  </node>
+</launch>
